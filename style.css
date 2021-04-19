@@ -70,6 +70,11 @@ header.topnav nav.menu {
 header.topnav nav.menu .item {
     display: flex;
     align-items: stretch;
+    /* Définie une propriété à animer */
+    transition-property: background-color;
+    /* Définie la durée de notre animation
+    en seconde */
+    transition-duration: 2s;
 }
 
 /* On centre les enfant des liens dans nos
