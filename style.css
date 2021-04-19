@@ -92,6 +92,18 @@ header.topnav nav.menu .item:hover a {
     color: #295765;
 }
 
+/* On enléve le padding du première item de notre
+menu */
+header.topnav nav.menu .item:first-child a {
+    padding-left: 0;
+}
+
+/* On enléve le padding du dernière item de notre
+menu */
+header.topnav nav.menu .item:last-child a {
+    padding-right: 0;
+}
+
 
 /* Définie un container central de largeur fixe */
 .container {
