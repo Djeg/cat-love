@@ -83,9 +83,20 @@ header.topnav nav.menu .item a {
     padding: 0 10px;
 }
 
+/* Définie un effet lors du survol de la souris
+grace au pseudo élément :hover */
+header.topnav nav.menu .item:hover {
+    background-color: #dbbdd6;
+}
+header.topnav nav.menu .item:hover a {
+    color: #295765;
+}
+
+
 /* Définie un container central de largeur fixe */
 .container {
     width: 650px;
+    padding-top: 10px;
 }
 
 /* Définie le style d'une carte */
