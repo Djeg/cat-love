@@ -2,3 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+header {
+    background-color: #295765;
+    min-height: 80px;
+}
+
+footer {
+    background-color: #295765;
+    min-height: 500px;
+}
