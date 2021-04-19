@@ -95,6 +95,11 @@ header.topnav nav.menu .item:hover {
 }
 header.topnav nav.menu .item:hover a {
     color: #295765;
+    /* Définie une propriété à animer */
+    transition-property: color;
+    /* Définie la durée de notre animation
+    en seconde */
+    transition-duration: 2s;
 }
 
 /* On enléve le padding du première item de notre
