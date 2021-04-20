@@ -67,7 +67,14 @@ header.topnav .logo {
     justify-content: center;
 }
 
-/* On align à droite le logo de l'utilisateur */
+/* On agrandie et blanchie le logo d'utilisateur */
+header.topnav .user-logo i {
+    max-height: 60px;
+    color: white;
+    font-size: 32px;
+}
+
+/* On aligne à droite le logo de l'utilisateur */
 header.topnav .user-logo {
     display: flex;
     justify-content: flex-end;
