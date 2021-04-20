@@ -104,6 +104,19 @@ header.topnav nav.menu {
     padding-left: 10px;
 }
 
+/*
+On personalise notre burger icon
+*/
+header.topnav .burger {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+header.topnav .burger i {
+    color: white;
+    font-size: 40px;
+}
+
 /* On définie chaque enfants d'un item comme
 "stretch" afin que la hauteur soit à 100% */
 header.topnav nav.menu .item {
@@ -168,3 +181,22 @@ header.topnav nav.menu .item:last-child a {
     margin-bottom: 10px;
 }
 
+/*
+Un media queries permet de rajouter du css pour
+des médias données. Il permet de personnaliser
+le css en fonction de la taille d'un écran.
+
+Ici on applique du css sur tout les écran qui ne dépasse
+pas 1048px de largeur.
+
+@media screen and (max-width: 1048px) {
+    header.topnav nav.menu .item a {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 860px) {
+    header.topnav nav.menu .item a {
+        font-size: 16px;
+    }
+}
+*/
