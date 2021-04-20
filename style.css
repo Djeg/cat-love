@@ -81,11 +81,10 @@ header.topnav .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-} .user-logo 
+}
 
 /* On agrandie et blanchie le logo d'utilisateur */
 header.topnav .user-logo i {
-    min-height: 60px;
     color: white;
     font-size: 32px;
 }
@@ -95,12 +94,14 @@ header.topnav .user-logo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-right: 10px;
 }
 
 /* On utilise flex pour notre .menu, afin
 d'afficher les blocks de gauche à droite */
 header.topnav nav.menu {
     display: flex;
+    padding-left: 10px;
 }
 
 /* On définie chaque enfants d'un item comme
