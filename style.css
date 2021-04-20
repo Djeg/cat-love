@@ -202,15 +202,12 @@ pas 1048px de largeur.
 */
 
 /*
- Ici tout ce qui concerne le design en dessous de
+ Ici tout ce qui concerne le design en dessus de
  1366px. Généralement se sont les tablet
  */
 @media screen and (max-width: 1366px) {
     header.topnav nav.menu {
         display: none;
-    }
-    header.topnav .burger {
-        display: flex;
     }
 }
 
@@ -219,9 +216,6 @@ Ici tout ce qui concerne le design au dessus de
 1366px. Généralement les desktop.
 */
 @media screen and (min-width: 1367px) {
-    header.topnav nav.menu {
-        display: flex;
-    }
     header.topnav .burger {
         display: none;
     }
