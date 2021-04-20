@@ -44,6 +44,13 @@ header {
 d'afficher les block de gauche à droite */
 header.topnav {
     display: flex;
+    justify-content: space-between;
+}
+
+/* On séléction tout (*) les enfants direct
+(>) de notre header.topnav */
+header.topnav > * {
+    width: 33.33%;
 }
 
 /* On limite la hauteur de l'image de notre
