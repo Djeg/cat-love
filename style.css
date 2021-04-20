@@ -64,6 +64,14 @@ utilisant flex et align-items */
 header.topnav .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+/* On align à droite le logo de l'utilisateur */
+header.topnav .user-logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* On utilise flex pour notre .menu, afin
