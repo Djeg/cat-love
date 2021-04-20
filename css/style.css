@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/*
+Ceci est une déclaration de variable.
+Les variables peuvent être utilisé dans tout
+notre code SASS.
+
+Elle permet de ne pas avoir à copier/coller
+certaines informations (comme par éxemple
+des couleurs).
+*/
 html, body {
   margin: 0;
   padding: 0;
@@ -29,7 +38,7 @@ block */
 /* On colorie l'arriere plan du footer et
 du header */
 footer, header {
-  background-color: #295765;
+  background-color: #193b46;
 }
 
 /* On donne une hauteur minimum au footer et
@@ -150,7 +159,7 @@ header.topnav nav.menu .item:hover {
 }
 
 header.topnav nav.menu .item:hover a {
-  color: #295765;
+  color: #193b46;
   /* Définie une propriété à animer */
   transition-property: color;
   /* Définie la durée de notre animation
@@ -178,7 +187,7 @@ header.topnav nav.menu .item:last-child a {
 
 /* Définie le style d'une carte */
 .card {
-  background-color: #295765;
+  background-color: #193b46;
   color: white;
   min-width: 200px;
   margin-bottom: 10px;

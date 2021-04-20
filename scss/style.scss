@@ -1,3 +1,15 @@
+/*
+Ceci est une déclaration de variable.
+Les variables peuvent être utilisé dans tout
+notre code SASS.
+
+Elle permet de ne pas avoir à copier/coller
+certaines informations (comme par éxemple
+des couleurs).
+*/
+$lightBlue: #556f7a;
+$darkBlue: #193b46;
+
 html, body {
     margin: 0;
     padding: 0;
@@ -19,7 +31,7 @@ afin qu'il prenne l'espace entre deux autre
 block */
 .content {
     flex-grow: 2;
-    background-color: #556f7a;
+    background-color: $lightBlue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +40,7 @@ block */
 /* On colorie l'arriere plan du footer et
 du header */
 footer, header {
-    background-color: #295765;
+    background-color:$darkBlue;
 }
 
 /* On donne une hauteur minimum au footer et
@@ -146,7 +158,7 @@ header.topnav nav.menu .item:hover {
     background-color: #dbbdd6;
 }
 header.topnav nav.menu .item:hover a {
-    color: #295765;
+    color: $darkBlue;
     /* Définie une propriété à animer */
     transition-property: color;
     /* Définie la durée de notre animation
@@ -175,7 +187,7 @@ header.topnav nav.menu .item:last-child a {
 
 /* Définie le style d'une carte */
 .card {
-    background-color: #295765;
+    background-color: $darkBlue;
     color: white;
     min-width: 200px;
     margin-bottom: 10px;
