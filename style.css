@@ -40,8 +40,24 @@ header {
     min-height: 80px;
 }
 
-/* On utilise flex pour notre header, afin
-d'afficher les block de gauche à droite */
+/*
+On utilise flex pour notre header, afin
+d'afficher les block de gauche à droite
+
+Les élément attaché (sans éspace) spécifie
+un élément à désigner par éxemple ici nous
+voulons designer :
+
+"Le header avec la class .topnav"
+
+Les éléments détaché (avec) espace spécifie
+les enfant d'un élément a désigner :
+
+example avec "header .topnav" :
+
+"Toutes les balises avec la class
+.topnav dans le header"
+*/
 header.topnav {
     display: flex;
     justify-content: space-between;
@@ -65,7 +81,7 @@ header.topnav .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} .user-logo 
 
 /* On agrandie et blanchie le logo d'utilisateur */
 header.topnav .user-logo i {
