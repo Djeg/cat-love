@@ -10,4 +10,17 @@ des couleurs).
 $lightBlue: #556f7a;
 $darkBlue: #193b46;
 $pink: #dbbdd6;
-$desktopBreakpoint: 1366px
+$desktopBreakpoint: 1366px;
+
+/*
+Une mixin est une fonction SASS. Cette fonction
+permet de réutiliser du code SASS facilement.
+
+Ici on déclare une mixin (comprendre Function) qui
+désactive un élément pour les desktop.
+*/
+@mixin disableForDesktop() {
+    @media screen and (min-width: $desktopBreakpoint + 1px) {
+        display: none;
+    }
+}

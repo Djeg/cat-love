@@ -29,6 +29,13 @@ certaines informations (comme par éxemple
 des couleurs).
 */
 /*
+Une mixin est une fonction SASS. Cette fonction
+permet de réutiliser du code SASS facilement.
+
+Ici on déclare une mixin (comprendre Function) qui
+désactive un élément pour les desktop.
+*/
+/*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
 

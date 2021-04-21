@@ -75,9 +75,7 @@ header.topnav {
         Ici tout ce qui concerne le design au dessus de 
         1366px. Généralement les desktop.
         */
-        @media screen and (min-width: var.$desktopBreakpoint + 1px) {
-            display: none;
-        }
+        @include var.disableForDesktop();
 
         i {
             color: white;
