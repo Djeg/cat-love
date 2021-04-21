@@ -72,18 +72,21 @@ example avec "header .topnav" :
 header.topnav {
   display: flex;
   justify-content: space-between;
-}
+  /* On peut imbriquer des règles CSS, ici
+  on limite la hauteur de l'image de notre logo. */
+  /*
+  Le caractére "&" signifie le sélécteur en cours,
+  ici "header.topnav"
 
-/* On séléction tout (*) les enfants direct
-(>) de notre header.topnav */
-header.topnav > * {
-  width: 33.33%;
+  On séléction tout (*) les enfants direct
+  (>) de notre header.topnav
+  */
 }
-
-/* On limite la hauteur de l'image de notre
-logo */
 header.topnav .logo img {
   max-height: 60px;
+}
+header.topnav > * {
+  width: 33.33%;
 }
 
 /* On centre l'image de notre logo en
