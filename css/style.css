@@ -116,6 +116,15 @@ header.topnav .burger {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  /*
+  Ici tout ce qui concerne le design au dessus de 
+  1366px. Généralement les desktop.
+  */
+}
+@media screen and (min-width: 1367px) {
+  header.topnav .burger {
+    display: none;
+  }
 }
 header.topnav .burger i {
   color: white;
@@ -212,14 +221,5 @@ pas 1048px de largeur.
     }
 }
 */
-/*
-Ici tout ce qui concerne le design au dessus de 
-1366px. Généralement les desktop.
-*/
-@media screen and (min-width: 1367px) {
-  header.topnav .burger {
-    display: none;
-  }
-}
 
 /*# sourceMappingURL=style.css.map */

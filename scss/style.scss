@@ -10,6 +10,7 @@ des couleurs).
 $lightBlue: #556f7a;
 $darkBlue: #193b46;
 $pink: #dbbdd6;
+$desktopBreakpoint: 1366px;
 
 html, body {
     margin: 0;
@@ -122,6 +123,14 @@ header.topnav {
         align-items: center;
         justify-content: flex-start;
 
+        /*
+        Ici tout ce qui concerne le design au dessus de 
+        1366px. Généralement les desktop.
+        */
+        @media screen and (min-width: $desktopBreakpoint + 1px) {
+            display: none;
+        }
+
         i {
             color: white;
             font-size: 40px;
@@ -138,7 +147,7 @@ header.topnav {
         Ici tout ce qui concerne le design en dessus de
         1366px. Généralement se sont les tablet
         */
-        @media screen and (max-width: 1366px) {
+        @media screen and (max-width: $desktopBreakpoint) {
             display: none;
         }
 
@@ -229,13 +238,3 @@ pas 1048px de largeur.
 }
 */
 
-
-/*
-Ici tout ce qui concerne le design au dessus de 
-1366px. Généralement les desktop.
-*/
-@media screen and (min-width: 1367px) {
-    header.topnav .burger {
-        display: none;
-    }
-}
