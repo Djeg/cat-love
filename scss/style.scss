@@ -2,22 +2,8 @@
 Importe un autre fichier sass dans notre fichier
 */
 @import "_variables.scss";
+@import "_base.scss";
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-/* On redimensionne la balise main de sorte
-à ce qu'elle prenne toute la hauteur de la
-page */
-main {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 /* On applique un flex-grow sur notre content
 afin qu'il prenne l'espace entre deux autre

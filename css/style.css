@@ -11,6 +11,10 @@ Elle permet de ne pas avoir à copier/coller
 certaines informations (comme par éxemple
 des couleurs).
 */
+/*
+Ce fichier contient le CSS de tout les éléments
+HTML sans class.
+*/
 html, body {
   margin: 0;
   padding: 0;
