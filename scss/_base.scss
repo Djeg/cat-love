@@ -18,3 +18,18 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* On colorie l'arriere plan du footer et
+du header */
+footer, header {
+    background-color: $darkBlue;
+}
+
+/* On donne une hauteur minimum au footer et
+au header */
+footer {
+    min-height: 300px;
+}
+header {
+    min-height: 80px;
+}

@@ -16,21 +16,6 @@ block */
     align-items: center;
 }
 
-/* On colorie l'arriere plan du footer et
-du header */
-footer, header {
-    background-color: $darkBlue;
-}
-
-/* On donne une hauteur minimum au footer et
-au header */
-footer {
-    min-height: 300px;
-}
-header {
-    min-height: 80px;
-}
-
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
