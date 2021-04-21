@@ -36,6 +36,46 @@ Ici on déclare une mixin (comprendre Function) qui
 désactive un élément pour les desktop.
 */
 /*
+Désactive un élément pour les tablettes
+et les mobiles
+*/
+/*
+Une mixin peut accepter des paramètres. Ces paramètres
+sont renseigné lors de l'inclusion de la mixin via
+'@include'. Cela permet de générer du SASS "intéligent".
+
+Voici des éxemple de mixin compléxe :
+*/
+/* Désactive un élément pour un taille d'écran donné */
+/*
+Change la propriété display pour une taille d'écran
+donné */
+/*
+Dans cette example, la class sera désactivé (display: none) pour
+les tablette
+*/
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .example1 {
+    display: none;
+  }
+}
+
+/*
+Ici notre élément sera en display flex pour les tablet
+et les desktop mais en display "block" pour les mobiles
+*/
+@media screen and (min-width: 768px) and (max-width: 40000px) {
+  .example2 {
+    display: "flex";
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .example2 {
+    display: "block";
+  }
+}
+
+/*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
 

@@ -93,9 +93,7 @@ header.topnav {
         Ici tout ce qui concerne le design en dessus de
         1366px. Généralement se sont les tablet
         */
-        @media screen and (max-width: var.$desktopBreakpoint) {
-            display: none;
-        }
+        @include var.disableForMobileAndTablet();
 
         /* On définie chaque enfants d'un item comme
         "stretch" afin que la hauteur soit à 100% */
