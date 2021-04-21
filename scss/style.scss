@@ -1,12 +1,11 @@
 /*
 Importe un autre fichier sass dans notre fichier
 */
-@import "_variables.scss";
-@import "_base.scss";
-@import "./components/_header.scss";
-@import "./components/_layout.scss";
-@import "./components/_card.scss";
-@import "./components/_footer.scss";
+@use "_base.scss";
+@use "./components/_header.scss";
+@use "./components/_layout.scss";
+@use "./components/_card.scss";
+@use "./components/_footer.scss";
 
 /*
 Un media queries permet de rajouter du css pour

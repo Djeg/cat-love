@@ -1,3 +1,5 @@
+@use "../_variables.scss" as var;
+
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
@@ -19,7 +21,7 @@ example avec "header .topnav" :
 header.topnav {
     display: flex;
     justify-content: space-between;
-    background-color: $darkBlue;
+    background-color: var.$darkBlue;
     min-height: 80px;
 
     /*
@@ -73,7 +75,7 @@ header.topnav {
         Ici tout ce qui concerne le design au dessus de 
         1366px. Généralement les desktop.
         */
-        @media screen and (min-width: $desktopBreakpoint + 1px) {
+        @media screen and (min-width: var.$desktopBreakpoint + 1px) {
             display: none;
         }
 
@@ -93,7 +95,7 @@ header.topnav {
         Ici tout ce qui concerne le design en dessus de
         1366px. Généralement se sont les tablet
         */
-        @media screen and (max-width: $desktopBreakpoint) {
+        @media screen and (max-width: var.$desktopBreakpoint) {
             display: none;
         }
 
@@ -115,17 +117,17 @@ header.topnav {
                 align-items: center;
                 text-decoration: none;
                 font-size: 22px;
-                color: $pink;
+                color: var.$pink;
                 padding: 0 10px;
             }
 
             /* Définie un effet lors du survol de la souris
             grace au pseudo élément :hover */
             &:hover {
-                background-color: $pink;
+                background-color: var.$pink;
 
                 a {
-                    color: $darkBlue;
+                    color: var.$darkBlue;
                     /* Définie une propriété à animer */
                     transition-property: color;
                     /* Définie la durée de notre animation

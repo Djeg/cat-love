@@ -1,6 +1,8 @@
+@use "../variables" as var;
+
 /* Définie le style d'une carte */
 .card {
-    background-color: $darkBlue;
+    background-color: var.$darkBlue;
     color: white;
     min-width: 200px;
     margin-bottom: 10px;

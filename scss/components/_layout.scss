@@ -1,9 +1,11 @@
+@use "../variables" as var;
+
 /* On applique un flex-grow sur notre content
 afin qu'il prenne l'espace entre deux autre
 block */
 .content {
     flex-grow: 2;
-    background-color: $lightBlue;
+    background-color: var.$lightBlue;
     display: flex;
     flex-direction: column;
     align-items: center;

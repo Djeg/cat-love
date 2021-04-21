@@ -1,17 +1,5 @@
 @charset "UTF-8";
 /*
-Importe un autre fichier sass dans notre fichier
-*/
-/*
-Ceci est une déclaration de variable.
-Les variables peuvent être utilisé dans tout
-notre code SASS.
-
-Elle permet de ne pas avoir à copier/coller
-certaines informations (comme par éxemple
-des couleurs).
-*/
-/*
 Ce fichier contient le CSS de tout les éléments
 HTML sans class.
 */
@@ -31,6 +19,15 @@ main {
   justify-content: space-between;
 }
 
+/*
+Ceci est une déclaration de variable.
+Les variables peuvent être utilisé dans tout
+notre code SASS.
+
+Elle permet de ne pas avoir à copier/coller
+certaines informations (comme par éxemple
+des couleurs).
+*/
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
@@ -203,6 +200,9 @@ au header */
   min-height: 300px;
 }
 
+/*
+Importe un autre fichier sass dans notre fichier
+*/
 /*
 Un media queries permet de rajouter du css pour
 des médias données. Il permet de personnaliser
