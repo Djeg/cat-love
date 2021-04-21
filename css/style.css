@@ -49,7 +49,8 @@ Voici des éxemple de mixin compléxe :
 /* Désactive un élément pour un taille d'écran donné */
 /*
 Change la propriété display pour une taille d'écran
-donné */
+donné
+*/
 /*
 Dans cette example, la class sera désactivé (display: none) pour
 les tablette
@@ -113,6 +114,9 @@ header.topnav {
   */
   /* On utilise flex pour notre .menu, afin
   d'afficher les blocks de gauche à droite */
+  /*
+  Design du menu déroulant
+  */
 }
 header.topnav > * {
   width: 33.33%;
@@ -142,6 +146,8 @@ header.topnav .burger {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  z-index: 10;
+  background-color: #193b46;
   /*
   Ici tout ce qui concerne le design au dessus de 
   1366px. Généralement les desktop.
@@ -212,6 +218,34 @@ header.topnav nav.menu .item:first-child a {
 }
 header.topnav nav.menu .item:last-child a {
   padding-right: 0;
+}
+header.topnav .scroll-menu {
+  position: absolute;
+  margin-top: 80px;
+  background-color: #193b46;
+  transform: translate(0px, -200px);
+  transition-property: transform;
+  transition-duration: 0.5s;
+  z-index: 0;
+}
+@media screen and (min-width: 1367px) {
+  header.topnav .scroll-menu {
+    display: none;
+  }
+}
+header.topnav .scroll-menu.active {
+  transform: translate(0px, 0px);
+}
+header.topnav .scroll-menu .item a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+header.topnav .scroll-menu .item a:hover {
+  color: #dbbdd6;
 }
 
 /* On applique un flex-grow sur notre content

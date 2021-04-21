@@ -44,7 +44,18 @@
                         <a href="#">Trouver des chats</a>
                     </div>
                 </nav>
-                <div class="burger">
+                <nav class="scroll-menu">
+                    <div class="item">
+                        <a href="#">Le mur</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Vos posts</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Trouver des chats</a>
+                    </div>
+                </nav>
+                <div class="burger" onclick="toggleScrollMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="logo">
@@ -83,4 +94,12 @@
             <footer class="footer"></footer>
         </main>
     </body>
+
+    <script>
+        function toggleScrollMenu() {
+            let scrollMenu = document.querySelector('nav.scroll-menu');
+
+            scrollMenu.classList.toggle('active');
+        }
+    </script>
 </html>

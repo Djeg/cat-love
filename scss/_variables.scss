@@ -54,7 +54,8 @@ Voici des éxemple de mixin compléxe :
 
 /*
 Change la propriété display pour une taille d'écran
-donné */
+donné
+*/
 @mixin displayForScreenSize($minWidth, $maxWidth, $display) {
     @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
         display: $display;

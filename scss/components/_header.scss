@@ -1,5 +1,7 @@
 @use "../_variables.scss" as var;
 
+$headerMinHeight: 80px;
+
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
@@ -22,7 +24,7 @@ header.topnav {
     display: flex;
     justify-content: space-between;
     background-color: var.$darkBlue;
-    min-height: 80px;
+    min-height: $headerMinHeight;
 
     /*
     Le caractére "&" signifie le sélécteur en cours,
@@ -70,6 +72,8 @@ header.topnav {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        z-index: 10;
+        background-color: var.$darkBlue;
 
         /*
         Ici tout ce qui concerne le design au dessus de 
@@ -142,6 +146,40 @@ header.topnav {
             menu */
             &:last-child a {
                 padding-right: 0;
+            }
+        }
+    }
+
+    /*
+    Design du menu déroulant
+    */
+    .scroll-menu {
+        position: absolute;
+        margin-top: $headerMinHeight;
+        background-color: var.$darkBlue;
+        transform: translate(0px, -200px);
+        transition-property: transform;
+        transition-duration: .5s;
+        z-index: 0;
+
+        @include var.disableForDesktop();
+
+        &.active {
+            transform: translate(0px, 0px);
+        }
+
+        .item {
+            a {
+                display: block;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                transition-property: color;
+                transition-duration: .5s;
+
+                &:hover {
+                    color: var.$pink;
+                }
             }
         }
     }
