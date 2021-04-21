@@ -9,6 +9,7 @@ des couleurs).
 */
 $lightBlue: #556f7a;
 $darkBlue: #193b46;
+$pink: #dbbdd6;
 
 html, body {
     margin: 0;
@@ -40,7 +41,7 @@ block */
 /* On colorie l'arriere plan du footer et
 du header */
 footer, header {
-    background-color:$darkBlue;
+    background-color: $darkBlue;
 }
 
 /* On donne une hauteur minimum au footer et
@@ -148,14 +149,14 @@ header.topnav nav.menu .item a {
     align-items: center;
     text-decoration: none;
     font-size: 22px;
-    color: #dbbdd6;
+    color: $pink;
     padding: 0 10px;
 }
 
 /* Définie un effet lors du survol de la souris
 grace au pseudo élément :hover */
 header.topnav nav.menu .item:hover {
-    background-color: #dbbdd6;
+    background-color: $pink;
 }
 header.topnav nav.menu .item:hover a {
     color: $darkBlue;
