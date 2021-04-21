@@ -1,0 +1,150 @@
+/*
+On utilise flex pour notre header, afin
+d'afficher les block de gauche à droite
+
+Les élément attaché (sans éspace) spécifie
+un élément à désigner par éxemple ici nous
+voulons designer :
+
+"Le header avec la class .topnav"
+
+Les éléments détaché (avec) espace spécifie
+les enfant d'un élément a désigner :
+
+example avec "header .topnav" :
+
+"Toutes les balises avec la class
+.topnav dans le header"
+*/
+header.topnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: $darkBlue;
+    min-height: 80px;
+
+    /*
+    Le caractére "&" signifie le sélécteur en cours,
+    ici "header.topnav"
+
+    On séléction tout (*) les enfants direct
+    (>) de notre header.topnav
+    */
+    & > * {
+        width: 33.33%;
+    }
+
+    /* On centre l'image de notre logo en
+    utilisant flex et align-items */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* On peut imbriquer des règles CSS, ici
+        on limite la hauteur de l'image de notre logo. */
+        img {
+            max-height: 60px;
+        }
+    }
+
+    /* On aligne à droite le logo de l'utilisateur */
+    .user-logo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+
+        /* On agrandie et blanchie le logo d'utilisateur */
+        i {
+            color: white;
+            font-size: 32px;
+        }
+    }
+
+    /*
+    On personalise notre burger icon
+    */
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        /*
+        Ici tout ce qui concerne le design au dessus de 
+        1366px. Généralement les desktop.
+        */
+        @media screen and (min-width: $desktopBreakpoint + 1px) {
+            display: none;
+        }
+
+        i {
+            color: white;
+            font-size: 40px;
+        }
+    }
+
+    /* On utilise flex pour notre .menu, afin
+    d'afficher les blocks de gauche à droite */
+    nav.menu {
+        display: flex;
+        padding-left: 10px;
+
+        /*
+        Ici tout ce qui concerne le design en dessus de
+        1366px. Généralement se sont les tablet
+        */
+        @media screen and (max-width: $desktopBreakpoint) {
+            display: none;
+        }
+
+        /* On définie chaque enfants d'un item comme
+        "stretch" afin que la hauteur soit à 100% */
+        .item {
+            display: flex;
+            align-items: stretch;
+            /* Définie une propriété à animer */
+            transition-property: background-color;
+            /* Définie la durée de notre animation
+            en seconde */
+            transition-duration: 2s;
+
+            /* On centre les enfant des liens dans nos
+            items grace à flex et align-items */
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-size: 22px;
+                color: $pink;
+                padding: 0 10px;
+            }
+
+            /* Définie un effet lors du survol de la souris
+            grace au pseudo élément :hover */
+            &:hover {
+                background-color: $pink;
+
+                a {
+                    color: $darkBlue;
+                    /* Définie une propriété à animer */
+                    transition-property: color;
+                    /* Définie la durée de notre animation
+                    en seconde */
+                    transition-duration: 2s;
+                }
+            }
+
+            /* On enléve le padding du première item de notre
+            menu */
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            /* On enléve le padding du dernière item de notre
+            menu */
+            &:last-child a {
+                padding-right: 0;
+            }
+        }
+    }
+}

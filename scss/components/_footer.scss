@@ -1,0 +1,8 @@
+/* On colorie l'arriere plan du footer et
+du header
+On donne une hauteur minimum au footer et
+au header */
+.footer {
+    background-color: $darkBlue;
+    min-height: 300px;
+}

@@ -31,33 +31,6 @@ main {
   justify-content: space-between;
 }
 
-/* On colorie l'arriere plan du footer et
-du header */
-footer, header {
-  background-color: #193b46;
-}
-
-/* On donne une hauteur minimum au footer et
-au header */
-footer {
-  min-height: 300px;
-}
-
-header {
-  min-height: 80px;
-}
-
-/* On applique un flex-grow sur notre content
-afin qu'il prenne l'espace entre deux autre
-block */
-.content {
-  flex-grow: 2;
-  background-color: #556f7a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
@@ -79,6 +52,8 @@ example avec "header .topnav" :
 header.topnav {
   display: flex;
   justify-content: space-between;
+  background-color: #193b46;
+  min-height: 80px;
   /*
   Le caractére "&" signifie le sélécteur en cours,
   ici "header.topnav"
@@ -195,8 +170,18 @@ header.topnav nav.menu .item:last-child a {
   padding-right: 0;
 }
 
-/* Définie un container central de largeur fixe */
-.container {
+/* On applique un flex-grow sur notre content
+afin qu'il prenne l'espace entre deux autre
+block */
+.content {
+  flex-grow: 2;
+  background-color: #556f7a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Définie un container central de largeur fixe */
+}
+.content .container {
   width: 650px;
   padding-top: 10px;
 }
@@ -207,6 +192,15 @@ header.topnav nav.menu .item:last-child a {
   color: white;
   min-width: 200px;
   margin-bottom: 10px;
+}
+
+/* On colorie l'arriere plan du footer et
+du header
+On donne une hauteur minimum au footer et
+au header */
+.footer {
+  background-color: #193b46;
+  min-height: 300px;
 }
 
 /*
