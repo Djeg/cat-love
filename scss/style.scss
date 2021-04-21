@@ -75,12 +75,6 @@ header.topnav {
     display: flex;
     justify-content: space-between;
 
-    /* On peut imbriquer des règles CSS, ici
-    on limite la hauteur de l'image de notre logo. */
-    .logo img {
-        max-height: 60px;
-    }
-
     /*
     Le caractére "&" signifie le sélécteur en cours,
     ici "header.topnav"
@@ -91,97 +85,105 @@ header.topnav {
     & > * {
         width: 33.33%;
     }
-}
 
-/* On centre l'image de notre logo en
-utilisant flex et align-items */
-header.topnav .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    /* On centre l'image de notre logo en
+    utilisant flex et align-items */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-/* On agrandie et blanchie le logo d'utilisateur */
-header.topnav .user-logo i {
-    color: white;
-    font-size: 32px;
-}
+        /* On peut imbriquer des règles CSS, ici
+        on limite la hauteur de l'image de notre logo. */
+        img {
+            max-height: 60px;
+        }
+    }
 
-/* On aligne à droite le logo de l'utilisateur */
-header.topnav .user-logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
-}
+    /* On aligne à droite le logo de l'utilisateur */
+    .user-logo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
 
-/* On utilise flex pour notre .menu, afin
-d'afficher les blocks de gauche à droite */
-header.topnav nav.menu {
-    display: flex;
-    padding-left: 10px;
-}
+        /* On agrandie et blanchie le logo d'utilisateur */
+        i {
+            color: white;
+            font-size: 32px;
+        }
+    }
 
-/*
-On personalise notre burger icon
-*/
-header.topnav .burger {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-header.topnav .burger i {
-    color: white;
-    font-size: 40px;
-}
+    /*
+    On personalise notre burger icon
+    */
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
 
-/* On définie chaque enfants d'un item comme
-"stretch" afin que la hauteur soit à 100% */
-header.topnav nav.menu .item {
-    display: flex;
-    align-items: stretch;
-    /* Définie une propriété à animer */
-    transition-property: background-color;
-    /* Définie la durée de notre animation
-    en seconde */
-    transition-duration: 2s;
-}
+        i {
+            color: white;
+            font-size: 40px;
+        }
+    }
 
-/* On centre les enfant des liens dans nos
-items grace à flex et align-items */
-header.topnav nav.menu .item a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 22px;
-    color: $pink;
-    padding: 0 10px;
-}
+    /* On utilise flex pour notre .menu, afin
+    d'afficher les blocks de gauche à droite */
+    nav.menu {
+        display: flex;
+        padding-left: 10px;
 
-/* Définie un effet lors du survol de la souris
-grace au pseudo élément :hover */
-header.topnav nav.menu .item:hover {
-    background-color: $pink;
-}
-header.topnav nav.menu .item:hover a {
-    color: $darkBlue;
-    /* Définie une propriété à animer */
-    transition-property: color;
-    /* Définie la durée de notre animation
-    en seconde */
-    transition-duration: 2s;
-}
+        /* On définie chaque enfants d'un item comme
+        "stretch" afin que la hauteur soit à 100% */
+        .item {
+            display: flex;
+            align-items: stretch;
+            /* Définie une propriété à animer */
+            transition-property: background-color;
+            /* Définie la durée de notre animation
+            en seconde */
+            transition-duration: 2s;
 
-/* On enléve le padding du première item de notre
-menu */
-header.topnav nav.menu .item:first-child a {
-    padding-left: 0;
-}
+            /* On centre les enfant des liens dans nos
+            items grace à flex et align-items */
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-size: 22px;
+                color: $pink;
+                padding: 0 10px;
+            }
 
-/* On enléve le padding du dernière item de notre
-menu */
-header.topnav nav.menu .item:last-child a {
-    padding-right: 0;
+            /* Définie un effet lors du survol de la souris
+            grace au pseudo élément :hover */
+            &:hover {
+                background-color: $pink;
+
+                a {
+                    color: $darkBlue;
+                    /* Définie une propriété à animer */
+                    transition-property: color;
+                    /* Définie la durée de notre animation
+                    en seconde */
+                    transition-duration: 2s;
+                }
+            }
+
+            /* On enléve le padding du première item de notre
+            menu */
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            /* On enléve le padding du dernière item de notre
+            menu */
+            &:last-child a {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 
