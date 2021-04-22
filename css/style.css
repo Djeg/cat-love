@@ -343,6 +343,10 @@ block */
   */
   object-fit: cover;
 }
+.card .card-content .centered-content {
+  display: flex;
+  justify-content: center;
+}
 .card .card-footer {
   border-top: 1px solid #556f7a;
   display: flex;

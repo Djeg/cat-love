@@ -92,6 +92,11 @@ $cardSmallPaddding: 12px;
                 object-fit: cover;
             }
         }
+
+        .centered-content {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     /*
