@@ -56,7 +56,7 @@ Voici des éxemple de mixin compléxe :
 Change la propriété display pour une taille d'écran
 donné
 */
-@mixin displayForScreenSize($minWidth, $maxWidth, $display) {
+@mixin changeDisplayForScreenSize($minWidth, $maxWidth, $display) {
     @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
         display: $display;
     }
@@ -67,7 +67,7 @@ Dans cette example, la class sera désactivé (display: none) pour
 les tablette
 */
 .example1 {
-    @include disableForScreenSize($tabletBreakpoint, $desktopBreakpoint)
+    @include disableForScreenSize($tabletBreakpoint, $desktopBreakpoint);
 }
 
 /*
@@ -75,12 +75,12 @@ Ici notre élément sera en display flex pour les tablet
 et les desktop mais en display "block" pour les mobiles
 */
 .example2 {
-    @include displayForScreenSize(
+    @include changeDisplayForScreenSize(
         $tabletBreakpoint,
         $veryLargeBreakpoint,
         'flex'
     );
-    @include displayForScreenSize(
+    @include changeDisplayForScreenSize(
         0px,
         $tabletBreakpoint,
         'block'

@@ -93,6 +93,20 @@ $cardSmallPaddding: 12px;
             }
         }
 
+        /*
+        Un éxemple d'utilisation de mixin:
+        Ici on désactive les video (display: none) pour les
+        écrans entre 480px et 1024px:
+
+            video {
+                @include var.changeDisplayForScreenSize(
+                    480px,
+                    1024px,
+                    none,
+                );
+            }
+        */
+
         .centered-content {
             display: flex;
             justify-content: center;
