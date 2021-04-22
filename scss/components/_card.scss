@@ -10,6 +10,8 @@ $cardSmallPaddding: 12px;
     min-width: 200px;
     margin-bottom: 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 
     /*
     Désigne le header de la carte
@@ -19,6 +21,7 @@ $cardSmallPaddding: 12px;
         align-items: center;
         justify-content: space-between;
         padding: $cardDefaultPaddding;
+        padding-bottom: 0px;
 
         /*
         On display flex le thumbnail et le stats
@@ -62,6 +65,48 @@ $cardSmallPaddding: 12px;
             .unit {
                 margin-right: $cardSmallPaddding;
             }
+        }
+    }
+
+    /*
+    Désigne le contenu de la carte
+    */
+    .card-content {
+        padding: $cardDefaultPaddding;
+        padding-top: 0px;
+
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            max-height: 300px;
+
+            img {
+                min-width: 100%;
+
+                /*
+                Object fit permet de définir le comportement
+                d'une image à l'intérieur de son cadre.
+                cf: https://css-tricks.com/almanac/properties/o/object-fit/
+                */
+                object-fit: cover;
+            }
+        }
+    }
+
+    /*
+    On design le card footer
+    */
+    .card-footer {
+        border-top: 1px solid var.$lightBlue;
+        display: flex;
+
+        .button {
+            color: white;
+            background: none;
+            outline: none;
+            border: 1px solid var.$lightBlue;
+            padding: $cardSmallPaddding;
         }
     }
 }
