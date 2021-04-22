@@ -270,6 +270,35 @@ block */
   color: white;
   min-width: 200px;
   margin-bottom: 10px;
+  border-radius: 10px;
+}
+.card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.card .card-header .thumbnail, .card .card-header .stats {
+  display: flex;
+}
+.card .card-header .thumbnail {
+  align-items: center;
+}
+.card .card-header .thumbnail .post-label p {
+  margin: 5px 0px;
+}
+.card .card-header .thumbnail .post-label .username {
+  font-size: 1.2em;
+}
+.card .card-header .profile-picture {
+  margin-right: 12px;
+}
+.card .card-header .profile-picture img {
+  max-height: 80px;
+  border-radius: 100%;
+}
+.card .card-header .stats .unit {
+  margin-right: 12px;
 }
 
 /* On colorie l'arriere plan du footer et

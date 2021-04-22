@@ -1,9 +1,52 @@
 @use "../variables" as var;
 
+$cardDefaultPaddding: 15px;
+$cardSmallPaddding: 12px;
+
 /* Définie le style d'une carte */
 .card {
     background-color: var.$darkBlue;
     color: white;
     min-width: 200px;
     margin-bottom: 10px;
+    border-radius: 10px;
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $cardDefaultPaddding;
+
+        .thumbnail, .stats {
+            display: flex;
+        }
+
+        .thumbnail {
+            align-items: center;
+
+            .post-label {
+                p {
+                    margin: 5px 0px;
+                }
+                .username {
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        .profile-picture {
+            margin-right: $cardSmallPaddding;
+        }
+
+        .profile-picture img {
+            max-height: 80px;
+            border-radius: 100%;
+        }
+
+        .stats {
+            .unit {
+                margin-right: $cardSmallPaddding;
+            }
+        }
+    }
 }
