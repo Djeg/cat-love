@@ -271,12 +271,27 @@ block */
   min-width: 200px;
   margin-bottom: 10px;
   border-radius: 10px;
+  /*
+  Désigne le header de la carte
+  */
 }
 .card .card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
+  /*
+  On display flex le thumbnail et le stats
+  */
+  /*
+  ON désigne nore thumbnail
+  */
+  /*
+  On désigne notre image de profile
+  */
+  /*
+  On designé les stats
+  */
 }
 .card .card-header .thumbnail, .card .card-header .stats {
   display: flex;

@@ -11,16 +11,25 @@ $cardSmallPaddding: 12px;
     margin-bottom: 10px;
     border-radius: 10px;
 
+    /*
+    Désigne le header de la carte
+    */
     .card-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: $cardDefaultPaddding;
 
+        /*
+        On display flex le thumbnail et le stats
+        */
         .thumbnail, .stats {
             display: flex;
         }
 
+        /*
+        ON désigne nore thumbnail
+        */
         .thumbnail {
             align-items: center;
 
@@ -34,15 +43,21 @@ $cardSmallPaddding: 12px;
             }
         }
 
+        /*
+        On désigne notre image de profile
+        */
         .profile-picture {
             margin-right: $cardSmallPaddding;
+
+            img {
+                max-height: 80px;
+                border-radius: 100%;
+            }
         }
 
-        .profile-picture img {
-            max-height: 80px;
-            border-radius: 100%;
-        }
-
+        /*
+        On designé les stats
+        */
         .stats {
             .unit {
                 margin-right: $cardSmallPaddding;
