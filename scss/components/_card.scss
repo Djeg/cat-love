@@ -3,6 +3,26 @@
 $cardDefaultPaddding: 15px;
 $cardSmallPaddding: 12px;
 
+/*
+Nous créons une "keyframes" afin de définir
+les étapes de notre animation
+*/
+@keyframes zoom {
+    /*
+    Ici nous définissons l'étape initiale
+    */
+    0% {
+        transform: scale(1);
+    }
+
+    /*
+    Ici nous définissons l'étape de fin
+    */
+    100% {
+        transform: scale(1.1);
+    }
+}
+
 /* Définie le style d'une carte */
 .card {
     background-color: var.$darkBlue;
@@ -12,6 +32,14 @@ $cardSmallPaddding: 12px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    transition-property: transform;
+    transition-duration: .5s;
+
+    &:hover {
+        /* On applique notre animation zoom */
+        animation: zoom 0.5s infinite;
+        animation-direction: alternate;
+    }
 
     /*
     Désigne le header de la carte

@@ -76,6 +76,14 @@ et les desktop mais en display "block" pour les mobiles
   }
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(3);
+  }
+}
 /*
 On utilise flex pour notre header, afin
 d'afficher les block de gauche à droite
@@ -125,6 +133,8 @@ header.topnav .logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: zoom 3s infinite;
+  animation-direction: alternate;
   /* On peut imbriquer des règles CSS, ici
   on limite la hauteur de l'image de notre logo. */
 }
@@ -264,6 +274,24 @@ block */
   padding-top: 10px;
 }
 
+/*
+Nous créons une "keyframes" afin de définir
+les étapes de notre animation
+*/
+@keyframes zoom {
+  /*
+  Ici nous définissons l'étape initiale
+  */
+  0% {
+    transform: scale(1);
+  }
+  /*
+  Ici nous définissons l'étape de fin
+  */
+  100% {
+    transform: scale(1.1);
+  }
+}
 /* Définie le style d'une carte */
 .card {
   background-color: #193b46;
@@ -273,6 +301,8 @@ block */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  transition-property: transform;
+  transition-duration: 0.5s;
   /*
   Désigne le header de la carte
   */
@@ -282,6 +312,11 @@ block */
   /*
   On design le card footer
   */
+}
+.card:hover {
+  /* On applique notre animation zoom */
+  animation: zoom 0.5s infinite;
+  animation-direction: alternate;
 }
 .card .card-header {
   display: flex;
