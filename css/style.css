@@ -76,12 +76,18 @@ et les desktop mais en display "block" pour les mobiles
   }
 }
 
-@keyframes zoom {
-  0% {
-    transform: scale(1);
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
   }
-  100% {
-    transform: scale(3);
+  20%, 80% {
+    transform: translateX(2px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+  40%, 60% {
+    transform: translateX(4px);
   }
 }
 /*
@@ -133,7 +139,7 @@ header.topnav .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: zoom 3s infinite;
+  animation: shake 0.8s infinite;
   animation-direction: alternate;
   /* On peut imbriquer des règles CSS, ici
   on limite la hauteur de l'image de notre logo. */
