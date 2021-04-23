@@ -23,6 +23,18 @@ les étapes de notre animation
     }
 }
 
+@keyframes fondu {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 /* Définie le style d'une carte */
 .card {
     background-color: var.$darkBlue;
@@ -34,6 +46,10 @@ les étapes de notre animation
     flex-direction: column;
     transition-property: transform;
     transition-duration: .5s;
+
+    &.fade {
+        animation: fondu 3s;
+    }
 
     &:hover {
         /* On applique notre animation zoom */

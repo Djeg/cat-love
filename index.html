@@ -428,5 +428,19 @@
 
             scrollMenu.classList.toggle('active');
         }
+
+        function onScroll() {
+            if (534 < window.scrollY) {
+                return;
+            }
+
+            let card = document.querySelector('.card:nth-child(3)');
+            card.classList.toggle('fade');
+
+            document.removeEventListener('scroll', onScroll);
+        }
+
+
+        document.addEventListener('scroll', onScroll);
     </script>
 </html>
