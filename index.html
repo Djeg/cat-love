@@ -1,10 +1,431 @@
+<!--
+    Spécifie la version éxacte de HTML que nous
+    voulons utiliser
+-->
 <!DOCTYPE html>
-<html>
+
+<!--
+    Commence un document HTML
+-->
+<html lang="fr">
+    <!--
+        Configure "l'onglet" de notre page web
+    -->
     <head>
+        <!-- Titre de l'onglet -->
         <title>CatLove - Nos amis les chats</title>
-        <link type="text/css" href="./style.css" />
+        <meta charset="utf-8" />
+        <meta lang="fr" />
+
+        <!--
+            Lien vers des resources externe qui Configure
+            notre page web. Ici nous ajoutons une "ressource"
+            CSS nous permettant de styliser notre page.
+
+            Nous ajoutons aussi "normalize.css" qui permet de
+            "reset" le css des différents navigateurs.
+            Ainsi que "font-awesome" pour les icones
+        -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
     </head>
+
+    <!--
+        Configure la page (tout ce qui s'affiche dans
+        notre page web)
+    -->
     <body>
-        <h1>Bienvenu sur CatLove !</h1>
+        <main>
+            <header class="topnav">
+                <nav class="menu">
+                    <div class="item">
+                        <a href="#">Le mur</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Vos posts</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Trouver des chats</a>
+                    </div>
+                </nav>
+                <nav class="scroll-menu">
+                    <div class="item">
+                        <a href="#">Le mur</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Vos posts</a>
+                    </div>
+                    <div class="item">
+                        <a href="#">Trouver des chats</a>
+                    </div>
+                </nav>
+                <div class="burger" onclick="toggleScrollMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <img src="./assets/logo.svg" alt="Logo de catlove" />
+                </div>
+                <div class="user-logo">
+                    <i class="fas fa-user"></i>
+                </div>
+            </header>
+            <div class="content">
+                <div class="container">
+                    <!--
+                        Nous définissons ici une "carte" de réseaux
+                        social.
+
+                        Cette carte comporte 3 parties :
+                        Un header (image de profile, nom de la personne ...)
+                        Un contenu
+                        Un footer (les boutons j'aime, commenter ...)
+                    -->
+                    <div class="card">
+
+                        <!--
+                            Ici nous commencons le contenu du header de notre carte.
+                        -->
+                        <div class="card-header">
+
+                            <!--
+                                Ici nous définissons la miniature (profile-picture)
+                                ainsi que le nom et l'heure de publication
+                            -->
+                            <div class="thumbnail">
+                                <div class="profile-picture">
+                                    <img src="https://loremflickr.com/100/100/cat?lock=1" alt="félix le chat" />
+                                </div>
+                                <div class="post-label">
+                                    <p class="username">Félix le chat</p>
+                                    <p class="at">Il y a 1 heure</p>
+                                </div>
+                            </div>
+
+                            <!--
+                                Ici nous rajoutons les statistiques de la carte:
+                                Le nombre likes, le nombre de partage.
+                            -->
+                            <div class="stats">
+                                <div class="unit">
+                                    <i class="fas fa-share-square"></i>
+                                    <span class="number">496</span>
+                                </div>
+                                <div class="unit">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="number">7282</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--
+                            Ici nous définissons le contenue d'une carte
+                        -->
+                        <div class="card-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula dapibus mauris non pharetra. Mauris accumsan, mi nec lobortis sagittis, tortor nisi pharetra elit, ut pharetra justo odio sed arcu. Morbi et libero elit. Proin placerat lectus eget velit fringilla.
+                            </p>
+                            <div class="image-container">
+                                <img src="https://loremflickr.com/500/500/cat?lock=2" alt="Mon amie le chat" />
+                            </div>
+                        </div>
+
+                        <!--
+                            Et pour finir, voici le "pied" de la carte (footer) qui
+                            contient 3 boutons d'action (j'aime, commenter et partager)
+                        -->
+                        <div class="card-footer">
+                            <button class="button">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="label">J'aime</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-comment"></i>
+                                <span class="label">Commenter</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-share-square"></i>
+                                <span class="label">Partager</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- C'est ici que se termine notre première carte -->
+
+                    <!--
+                        Nous définissons ici une "carte" de réseaux
+                        social.
+
+                        Cette carte comporte 3 parties :
+                        Un header (image de profile, nom de la personne ...)
+                        Un contenu
+                        Un footer (les boutons j'aime, commenter ...)
+                    -->
+                    <div class="card">
+
+                        <!--
+                            Ici nous commencons le contenu du header de notre carte.
+                        -->
+                        <div class="card-header">
+
+                            <!--
+                                Ici nous définissons la miniature (profile-picture)
+                                ainsi que le nom et l'heure de publication
+                            -->
+                            <div class="thumbnail">
+                                <div class="profile-picture">
+                                    <img src="https://loremflickr.com/100/100/cat?lock=1" alt="félix le chat" />
+                                </div>
+                                <div class="post-label">
+                                    <p class="username">Félix le chat</p>
+                                    <p class="at">Il y a 1 heure</p>
+                                </div>
+                            </div>
+
+                            <!--
+                                Ici nous rajoutons les statistiques de la carte:
+                                Le nombre likes, le nombre de partage.
+                            -->
+                            <div class="stats">
+                                <div class="unit">
+                                    <i class="fas fa-share-square"></i>
+                                    <span class="number">496</span>
+                                </div>
+                                <div class="unit">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="number">7282</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--
+                            Ici nous définissons le contenue d'une carte
+                        -->
+                        <div class="card-content">
+                            <p>
+                                Voici un fichier audio
+                            </p>
+
+                            <!--
+                                Pour faire de l'audio en HTML. Rien de plus,
+                                simple il faut utiliser une balise:
+                                <audio />
+
+                                Attention: Pour que la balise audio s'affiche
+                                sur la page il faut ajouter l'attribut "controls"
+
+                                <audio controls>
+                                        La balise source nous permet de spécifier
+                                        le fichier audio à jouer.
+
+                                        Cette balise posséde un attribut src vers le
+                                        fichier audio que l'on veut jouer.
+
+                                        L'attribut "type" spécifie le codec à utiliser
+
+                                    <source src="./assets/piano.mp3" type="audio/mp3"/>
+
+                                        Ici on peut afficher du HTML qui s'affichera si jamais
+                                        l'audio n'est pas supporté
+
+                                    <p>
+                                        Vous n'arrivez à lire l'audio ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </audio>
+
+                                Voici un éxemple de balise video.
+
+                                <video width="500" height="380" controls>                                    
+                                    <source src="./assets/cat.mp4" type="video/mp4" />
+
+                                    <p>
+                                        Vous n'arrivez à lire cette video ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </video>
+                            -->
+
+                            <div class="centered-content">
+                                <audio controls>
+                                    <source src="./assets/piano.mp3" type="audio/mp3" />
+                                    <p>
+                                        Vous n'arrivez à lire cette video ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!--
+                            Et pour finir, voici le "pied" de la carte (footer) qui
+                            contient 3 boutons d'action (j'aime, commenter et partager)
+                        -->
+                        <div class="card-footer">
+                            <button class="button">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="label">J'aime</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-comment"></i>
+                                <span class="label">Commenter</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-share-square"></i>
+                                <span class="label">Partager</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- C'est ici que se termine notre première carte -->
+
+                    <!--
+                        Nous définissons ici une "carte" de réseaux
+                        social.
+
+                        Cette carte comporte 3 parties :
+                        Un header (image de profile, nom de la personne ...)
+                        Un contenu
+                        Un footer (les boutons j'aime, commenter ...)
+                    -->
+                    <div class="card">
+
+                        <!--
+                            Ici nous commencons le contenu du header de notre carte.
+                        -->
+                        <div class="card-header">
+
+                            <!--
+                                Ici nous définissons la miniature (profile-picture)
+                                ainsi que le nom et l'heure de publication
+                            -->
+                            <div class="thumbnail">
+                                <div class="profile-picture">
+                                    <img src="https://loremflickr.com/100/100/cat?lock=1" alt="félix le chat" />
+                                </div>
+                                <div class="post-label">
+                                    <p class="username">Félix le chat</p>
+                                    <p class="at">Il y a 1 heure</p>
+                                </div>
+                            </div>
+
+                            <!--
+                                Ici nous rajoutons les statistiques de la carte:
+                                Le nombre likes, le nombre de partage.
+                            -->
+                            <div class="stats">
+                                <div class="unit">
+                                    <i class="fas fa-share-square"></i>
+                                    <span class="number">496</span>
+                                </div>
+                                <div class="unit">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="number">7282</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--
+                            Ici nous définissons le contenue d'une carte
+                        -->
+                        <div class="card-content">
+                            <p>
+                                Voici un fichier video
+                            </p>
+
+                            <!--
+                                Pour faire de l'audio en HTML. Rien de plus,
+                                simple il faut utiliser une balise:
+                                <audio />
+
+                                Attention: Pour que la balise audio s'affiche
+                                sur la page il faut ajouter l'attribut "controls"
+
+                                <audio controls>
+                                        La balise source nous permet de spécifier
+                                        le fichier audio à jouer.
+
+                                        Cette balise posséde un attribut src vers le
+                                        fichier audio que l'on veut jouer.
+
+                                        L'attribut "type" spécifie le codec à utiliser
+
+                                    <source src="./assets/piano.mp3" type="audio/mp3"/>
+
+                                        Ici on peut afficher du HTML qui s'affichera si jamais
+                                        l'audio n'est pas supporté
+
+                                    <p>
+                                        Vous n'arrivez à lire l'audio ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </audio>
+
+                                Voici un éxemple de balise video.
+
+                                <video width="500" height="380" controls>                                    
+                                    <source src="./assets/cat.mp4" type="video/mp4" />
+
+                                    <p>
+                                        Vous n'arrivez à lire cette video ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </video>
+                            -->
+
+                            <div class="centered-content">
+                                <video width="600" height="380" controls>
+                                    <source src="./assets/cat.mp4" type="video/mp4" />
+                                    <p>
+                                        Vous n'arrivez à lire cette video ? Peut-être pouvez vous
+                                        télécharger un navigateur plus récent.
+                                    </p>
+                                </video>
+                            </div>
+                        </div>
+
+                        <!--
+                            Et pour finir, voici le "pied" de la carte (footer) qui
+                            contient 3 boutons d'action (j'aime, commenter et partager)
+                        -->
+                        <div class="card-footer">
+                            <button class="button">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="label">J'aime</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-comment"></i>
+                                <span class="label">Commenter</span>
+                            </button>
+                            <button class="button">
+                                <i class="fas fa-share-square"></i>
+                                <span class="label">Partager</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- C'est ici que se termine notre première carte -->
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            Header
+                        </div>
+                        <div class="card-content">
+                            Content
+                        </div>
+                        <div class="card-footer">
+                            Footer
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer"></footer>
+        </main>
     </body>
+
+    <script>
+        function toggleScrollMenu() {
+            let scrollMenu = document.querySelector('nav.scroll-menu');
+
+            scrollMenu.classList.toggle('active');
+        }
+    </script>
 </html>

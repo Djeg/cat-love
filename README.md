@@ -14,3 +14,10 @@ CatLove est un site tutoriel afin d'apprendre HTML5 / CSS3 et SASS.
 Vous pouvez suivre les étapes de la formation en suivant ce [lien](https://slides.com/davidjegat-1/html5-css3-rappel/fullscreen)
 
 Bonne Chance à tous :)
+
+## Exercices
+
+### 1 - Design
+
+### 2 - Responsive
+

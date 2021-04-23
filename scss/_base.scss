@@ -1,0 +1,20 @@
+/*
+Ce fichier contient le CSS de tout les éléments
+HTML sans class.
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* On redimensionne la balise main de sorte
+à ce qu'elle prenne toute la hauteur de la
+page */
+main {
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

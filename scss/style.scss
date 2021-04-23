@@ -1,0 +1,29 @@
+/*
+Importe un autre fichier sass dans notre fichier
+*/
+@use "_base.scss";
+@use "./components/_header.scss";
+@use "./components/_layout.scss";
+@use "./components/_card.scss";
+@use "./components/_footer.scss";
+
+/*
+Un media queries permet de rajouter du css pour
+des médias données. Il permet de personnaliser
+le css en fonction de la taille d'un écran.
+
+Ici on applique du css sur tout les écran qui ne dépasse
+pas 1048px de largeur.
+
+@media screen and (max-width: 1048px) {
+    header.topnav nav.menu .item a {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 860px) {
+    header.topnav nav.menu .item a {
+        font-size: 16px;
+    }
+}
+*/
+

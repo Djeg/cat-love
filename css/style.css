@@ -1,0 +1,448 @@
+@charset "UTF-8";
+/*
+Ce fichier contient le CSS de tout les éléments
+HTML sans class.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* On redimensionne la balise main de sorte
+à ce qu'elle prenne toute la hauteur de la
+page */
+main {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*
+Ceci est une déclaration de variable.
+Les variables peuvent être utilisé dans tout
+notre code SASS.
+
+Elle permet de ne pas avoir à copier/coller
+certaines informations (comme par éxemple
+des couleurs).
+*/
+/*
+Une mixin est une fonction SASS. Cette fonction
+permet de réutiliser du code SASS facilement.
+
+Ici on déclare une mixin (comprendre Function) qui
+désactive un élément pour les desktop.
+*/
+/*
+Désactive un élément pour les tablettes
+et les mobiles
+*/
+/*
+Une mixin peut accepter des paramètres. Ces paramètres
+sont renseigné lors de l'inclusion de la mixin via
+'@include'. Cela permet de générer du SASS "intéligent".
+
+Voici des éxemple de mixin compléxe :
+*/
+/* Désactive un élément pour un taille d'écran donné */
+/*
+Change la propriété display pour une taille d'écran
+donné
+*/
+/*
+Dans cette example, la class sera désactivé (display: none) pour
+les tablette
+*/
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .example1 {
+    display: none;
+  }
+}
+
+/*
+Ici notre élément sera en display flex pour les tablet
+et les desktop mais en display "block" pour les mobiles
+*/
+@media screen and (min-width: 768px) and (max-width: 40000px) {
+  .example2 {
+    display: "flex";
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .example2 {
+    display: "block";
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  20%, 80% {
+    transform: translateX(2px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+  40%, 60% {
+    transform: translateX(4px);
+  }
+}
+/*
+On utilise flex pour notre header, afin
+d'afficher les block de gauche à droite
+
+Les élément attaché (sans éspace) spécifie
+un élément à désigner par éxemple ici nous
+voulons designer :
+
+"Le header avec la class .topnav"
+
+Les éléments détaché (avec) espace spécifie
+les enfant d'un élément a désigner :
+
+example avec "header .topnav" :
+
+"Toutes les balises avec la class
+.topnav dans le header"
+*/
+header.topnav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #193b46;
+  min-height: 80px;
+  /*
+  Le caractére "&" signifie le sélécteur en cours,
+  ici "header.topnav"
+
+  On séléction tout (*) les enfants direct
+  (>) de notre header.topnav
+  */
+  /* On centre l'image de notre logo en
+  utilisant flex et align-items */
+  /* On aligne à droite le logo de l'utilisateur */
+  /*
+  On personalise notre burger icon
+  */
+  /* On utilise flex pour notre .menu, afin
+  d'afficher les blocks de gauche à droite */
+  /*
+  Design du menu déroulant
+  */
+}
+header.topnav > * {
+  width: 33.33%;
+}
+header.topnav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: shake 0.8s infinite;
+  animation-direction: alternate;
+  /* On peut imbriquer des règles CSS, ici
+  on limite la hauteur de l'image de notre logo. */
+}
+header.topnav .logo img {
+  max-height: 60px;
+}
+header.topnav .user-logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  /* On agrandie et blanchie le logo d'utilisateur */
+}
+header.topnav .user-logo i {
+  color: white;
+  font-size: 32px;
+}
+header.topnav .burger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+  background-color: #193b46;
+  /*
+  Ici tout ce qui concerne le design au dessus de 
+  1366px. Généralement les desktop.
+  */
+}
+@media screen and (min-width: 1367px) {
+  header.topnav .burger {
+    display: none;
+  }
+}
+header.topnav .burger i {
+  color: white;
+  font-size: 40px;
+}
+header.topnav nav.menu {
+  display: flex;
+  padding-left: 10px;
+  /*
+  Ici tout ce qui concerne le design en dessus de
+  1366px. Généralement se sont les tablet
+  */
+  /* On définie chaque enfants d'un item comme
+  "stretch" afin que la hauteur soit à 100% */
+}
+@media screen and (max-width: 1366px) {
+  header.topnav nav.menu {
+    display: none;
+  }
+}
+header.topnav nav.menu .item {
+  display: flex;
+  align-items: stretch;
+  /* Définie une propriété à animer */
+  transition-property: background-color;
+  /* Définie la durée de notre animation
+  en seconde */
+  transition-duration: 2s;
+  /* On centre les enfant des liens dans nos
+  items grace à flex et align-items */
+  /* Définie un effet lors du survol de la souris
+  grace au pseudo élément :hover */
+  /* On enléve le padding du première item de notre
+  menu */
+  /* On enléve le padding du dernière item de notre
+  menu */
+}
+header.topnav nav.menu .item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  color: #dbbdd6;
+  padding: 0 10px;
+}
+header.topnav nav.menu .item:hover {
+  background-color: #dbbdd6;
+}
+header.topnav nav.menu .item:hover a {
+  color: #193b46;
+  /* Définie une propriété à animer */
+  transition-property: color;
+  /* Définie la durée de notre animation
+  en seconde */
+  transition-duration: 2s;
+}
+header.topnav nav.menu .item:first-child a {
+  padding-left: 0;
+}
+header.topnav nav.menu .item:last-child a {
+  padding-right: 0;
+}
+header.topnav .scroll-menu {
+  position: absolute;
+  margin-top: 80px;
+  background-color: #193b46;
+  transform: translate(0px, -200px);
+  transition-property: transform;
+  transition-duration: 0.5s;
+  z-index: 0;
+}
+@media screen and (min-width: 1367px) {
+  header.topnav .scroll-menu {
+    display: none;
+  }
+}
+header.topnav .scroll-menu.active {
+  transform: translate(0px, 0px);
+}
+header.topnav .scroll-menu .item a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+header.topnav .scroll-menu .item a:hover {
+  color: #dbbdd6;
+}
+
+/* On applique un flex-grow sur notre content
+afin qu'il prenne l'espace entre deux autre
+block */
+.content {
+  flex-grow: 2;
+  background-color: #556f7a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Définie un container central de largeur fixe */
+}
+.content .container {
+  width: 650px;
+  padding-top: 10px;
+}
+
+/*
+Nous créons une "keyframes" afin de définir
+les étapes de notre animation
+*/
+@keyframes zoom {
+  /*
+  Ici nous définissons l'étape initiale
+  */
+  0% {
+    transform: scale(1);
+  }
+  /*
+  Ici nous définissons l'étape de fin
+  */
+  100% {
+    transform: scale(1.1);
+  }
+}
+/* Définie le style d'une carte */
+.card {
+  background-color: #193b46;
+  color: white;
+  min-width: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  /*
+  Désigne le header de la carte
+  */
+  /*
+  Désigne le contenu de la carte
+  */
+  /*
+  On design le card footer
+  */
+}
+.card:hover {
+  /* On applique notre animation zoom */
+  animation: zoom 0.5s infinite;
+  animation-direction: alternate;
+}
+.card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  padding-bottom: 0px;
+  /*
+  On display flex le thumbnail et le stats
+  */
+  /*
+  ON désigne nore thumbnail
+  */
+  /*
+  On désigne notre image de profile
+  */
+  /*
+  On designé les stats
+  */
+}
+.card .card-header .thumbnail, .card .card-header .stats {
+  display: flex;
+}
+.card .card-header .thumbnail {
+  align-items: center;
+}
+.card .card-header .thumbnail .post-label p {
+  margin: 5px 0px;
+}
+.card .card-header .thumbnail .post-label .username {
+  font-size: 1.2em;
+}
+.card .card-header .profile-picture {
+  margin-right: 12px;
+}
+.card .card-header .profile-picture img {
+  max-height: 80px;
+  border-radius: 100%;
+}
+.card .card-header .stats .unit {
+  margin-right: 12px;
+}
+.card .card-content {
+  padding: 15px;
+  padding-top: 0px;
+  /*
+  Un éxemple d'utilisation de mixin:
+  Ici on désactive les video (display: none) pour les
+  écrans entre 480px et 1024px:
+
+      video {
+          @include var.changeDisplayForScreenSize(
+              480px,
+              1024px,
+              none,
+          );
+      }
+  */
+}
+.card .card-content .image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 300px;
+}
+.card .card-content .image-container img {
+  min-width: 100%;
+  /*
+  Object fit permet de définir le comportement
+  d'une image à l'intérieur de son cadre.
+  cf: https://css-tricks.com/almanac/properties/o/object-fit/
+  */
+  object-fit: cover;
+}
+.card .card-content .centered-content {
+  display: flex;
+  justify-content: center;
+}
+.card .card-footer {
+  border-top: 1px solid #556f7a;
+  display: flex;
+}
+.card .card-footer .button {
+  color: white;
+  background: none;
+  outline: none;
+  border: 1px solid #556f7a;
+  padding: 12px;
+}
+
+/* On colorie l'arriere plan du footer et
+du header
+On donne une hauteur minimum au footer et
+au header */
+.footer {
+  background-color: #193b46;
+  min-height: 300px;
+}
+
+/*
+Importe un autre fichier sass dans notre fichier
+*/
+/*
+Un media queries permet de rajouter du css pour
+des médias données. Il permet de personnaliser
+le css en fonction de la taille d'un écran.
+
+Ici on applique du css sur tout les écran qui ne dépasse
+pas 1048px de largeur.
+
+@media screen and (max-width: 1048px) {
+    header.topnav nav.menu .item a {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 860px) {
+    header.topnav nav.menu .item a {
+        font-size: 16px;
+    }
+}
+*/
+
+/*# sourceMappingURL=style.css.map */

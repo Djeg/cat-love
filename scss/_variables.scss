@@ -1,0 +1,88 @@
+/*
+Ceci est une déclaration de variable.
+Les variables peuvent être utilisé dans tout
+notre code SASS.
+
+Elle permet de ne pas avoir à copier/coller
+certaines informations (comme par éxemple
+des couleurs).
+*/
+$lightBlue: #556f7a;
+$darkBlue: #193b46;
+$pink: #dbbdd6;
+$veryLargeBreakpoint: 40000px;
+$desktopBreakpoint: 1366px;
+$tabletBreakpoint: 768px;
+$mobilePortraitBreakpoint: 568px;
+
+/*
+Une mixin est une fonction SASS. Cette fonction
+permet de réutiliser du code SASS facilement.
+
+Ici on déclare une mixin (comprendre Function) qui
+désactive un élément pour les desktop.
+*/
+@mixin disableForDesktop() {
+    @media screen and (min-width: $desktopBreakpoint + 1px) {
+        display: none;
+    }
+}
+/*
+Désactive un élément pour les tablettes
+et les mobiles
+*/
+@mixin disableForMobileAndTablet() {
+    @media screen and (max-width: $desktopBreakpoint) {
+        display: none;
+    }
+}
+
+/*
+Une mixin peut accepter des paramètres. Ces paramètres
+sont renseigné lors de l'inclusion de la mixin via
+'@include'. Cela permet de générer du SASS "intéligent".
+
+Voici des éxemple de mixin compléxe :
+*/
+
+/* Désactive un élément pour un taille d'écran donné */
+@mixin disableForScreenSize($minWidth, $maxWidth) {
+    @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+        display: none;
+    }
+}
+
+/*
+Change la propriété display pour une taille d'écran
+donné
+*/
+@mixin changeDisplayForScreenSize($minWidth, $maxWidth, $display) {
+    @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+        display: $display;
+    }
+}
+
+/*
+Dans cette example, la class sera désactivé (display: none) pour
+les tablette
+*/
+.example1 {
+    @include disableForScreenSize($tabletBreakpoint, $desktopBreakpoint);
+}
+
+/*
+Ici notre élément sera en display flex pour les tablet
+et les desktop mais en display "block" pour les mobiles
+*/
+.example2 {
+    @include changeDisplayForScreenSize(
+        $tabletBreakpoint,
+        $veryLargeBreakpoint,
+        'flex'
+    );
+    @include changeDisplayForScreenSize(
+        0px,
+        $tabletBreakpoint,
+        'block'
+    );
+}
